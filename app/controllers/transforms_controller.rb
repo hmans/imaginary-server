@@ -38,6 +38,6 @@ class TransformsController < ApplicationController
     end
 
     # render new jpg
-    render text: @job.data, content_type: 'image/jpeg'
+    render text: @job.data, content_type: @job.mime_type
   end
 end
