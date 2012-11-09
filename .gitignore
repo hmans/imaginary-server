@@ -16,3 +16,6 @@
 
 # local dragonfly uploads
 public/system/
+
+# local configuration
+.powenv
