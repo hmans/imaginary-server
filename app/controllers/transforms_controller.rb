@@ -1,7 +1,4 @@
-class ImagesController < InheritedResources::Base
-  respond_to :json, :xml
-  belongs_to :bucket
-
+class TransformsController < ApplicationController
   def serve
     @bucket = Bucket.find(params[:bucket_id])
     @image = @bucket.images.find_by_name!(params[:name])
