@@ -17,6 +17,7 @@ class ImagesController < InheritedResources::Base
           when 'w' then options[:width] = value
           when 'h' then options[:height] = value
           when 'c' then options[:crop_mode] = value
+          when 'g' then options[:gravity] = value
           else raise "Unrecognized option #{option}."
         end
       end
