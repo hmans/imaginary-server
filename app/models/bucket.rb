@@ -1,7 +1,10 @@
 class Bucket < ActiveRecord::Base
-  attr_accessible :title
+  attr_accessible :name
 
-  validates :title,
+  validates :name,
     presence: true,
     uniqueness: true
+
+  has_many :images,
+    dependent: :destroy
 end

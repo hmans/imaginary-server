@@ -1,7 +1,7 @@
 class CreateBuckets < ActiveRecord::Migration
   def change
     create_table :buckets do |t|
-      t.string :title
+      t.string :name
 
       t.timestamps
     end

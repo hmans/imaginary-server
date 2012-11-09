@@ -11,12 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121109180614) do
+ActiveRecord::Schema.define(:version => 20121109181003) do
 
   create_table "buckets", :force => true do |t|
-    t.string   "title"
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "images", :force => true do |t|
+    t.integer  "bucket_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "images", ["bucket_id"], :name => "index_images_on_bucket_id"
 
 end

@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 if Rails.env.development?
-  bucket = Bucket.create!(title: 'Test')
+  bucket = Bucket.create!(name: 'Test')
 end

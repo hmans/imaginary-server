@@ -1,6 +1,7 @@
 Imaginary::Application.routes.draw do
-  resources :images
+  resources :buckets, format: :json do
+    resources :images, format: :json
+  end
 
-  resources :buckets
   # root to: 'buckets#index'
 end
