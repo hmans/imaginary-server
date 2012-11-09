@@ -24,8 +24,8 @@ class ImagesController < InheritedResources::Base
     end
 
     if options.any?
-      case (options.delete(:crop_mode) || :scale).to_sym
-        when :scale
+      case (options.delete(:crop_mode) || :stretch).to_sym
+        when :stretch
           @job = @job.process(:resize, "#{options[:width]}x#{options[:height]}!")
         when :fit
           @job = @job.process(:resize, "#{options[:width]}x#{options[:height]}")
