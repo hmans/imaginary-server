@@ -42,6 +42,9 @@ group :production do
   # gem 'mysql2'
   gem 'pg'
   # gem 'therubyracer'
+
+  # when using S3
+  gem 'fog'
 end
 
 # gem 'jquery-rails'
