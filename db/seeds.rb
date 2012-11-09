@@ -6,8 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-bucket = Bucket.create!(name: 'Test')
-bucket.images.create! do |image|
-  image.image_url = 'http://placekitten.com/g/500/500'
-  image.name = 'kitten'
-end
+bucket = Bucket.create!(name: 'test')
+bucket.images.create!(image_url: 'http://3.bp.blogspot.com/-4kBvHvCJnOY/T-iKBteyTKI/AAAAAAAABLw/CwDU11DBqWc/s1600/kitten.jpeg')
+bucket.images.create!(image: File.new('./spec/files/hmans.jpg'))
