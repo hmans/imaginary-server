@@ -1,10 +1,9 @@
 # Imaginary
 
-## Notes
+## Installation
 
-- buckets
-- images
-- images#touched_at
-
-
-http://images.mans.de/buckets/12/image/123/
+* fork the project
+* change `config/initializers/secret_token.rb` (really?)
+* edit `config/initializers/dragonfly.rb`
+* deploy to Heroku or any other server
+* set up caching ;-)
