@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  attr_accessible :name, :image
+  attr_accessible :name, :image, :image_url
 
   validates :bucket_id,
     presence: true
