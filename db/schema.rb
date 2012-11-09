@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20121109181003) do
   create_table "images", :force => true do |t|
     t.integer  "bucket_id"
     t.string   "name"
+    t.string   "image_uid"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

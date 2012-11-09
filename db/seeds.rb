@@ -8,4 +8,8 @@
 
 if Rails.env.development?
   bucket = Bucket.create!(name: 'Test')
+  bucket.images.create! do |image|
+    image.image_url = 'http://placekitten.com/g/500/500'
+    image.name = 'kitten'
+  end
 end

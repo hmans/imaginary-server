@@ -17,9 +17,8 @@ gem 'quiet_assets'
 # gem 'cancan'
 
 # image uploads
-# gem 'rack-cache', :require => 'rack/cache'
-# gem 'dragonfly', '~>0.9.12'
-# gem 'dragonfly-cloudinary'
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.12'
 
 group :assets do
   # gem 'sass-rails',   '~> 3.2.3'

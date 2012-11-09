@@ -3,6 +3,7 @@ class CreateImages < ActiveRecord::Migration
     create_table :images do |t|
       t.belongs_to :bucket
       t.string :name
+      t.string :image_uid
 
       t.timestamps
     end

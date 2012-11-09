@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :image
 
   validates :bucket_id,
     presence: true
@@ -7,5 +7,9 @@ class Image < ActiveRecord::Base
   validates :name,
     presence: true
 
+  validates :image,
+    presence: true
+
+  has_image :image
   belongs_to :bucket
 end
