@@ -7,13 +7,14 @@ class TransformsController < ApplicationController
       params[:name] = "#{params[:name]}.#{params.delete(:format)}"
     end
 
+    # Load the data we need.
     @bucket = Bucket.find_by_name(params[:bucket_id]) || Bucket.find(params[:bucket_id])
     @image = @bucket.images.find_by_name!(params[:name])
 
-    # start with the source image
+    # Start with the source image.
     @job = @image.image
 
-    # collect options
+    # Collect options
     options = {}
     if params[:options].present?
       params[:options].split('/').each do |option|
@@ -30,7 +31,7 @@ class TransformsController < ApplicationController
       end
     end
 
-    # process image
+    # Process image, if requested.
     if options.any?
       case (options.delete(:crop_mode) || :stretch).to_sym
         when :stretch
@@ -44,7 +45,7 @@ class TransformsController < ApplicationController
       end
     end
 
-    # render new jpg
+    # Render the result!
     render text: @job.data, content_type: @job.mime_type
   end
 end
