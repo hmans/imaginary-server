@@ -5,7 +5,8 @@ class Image < ActiveRecord::Base
     presence: true
 
   validates :name,
-    presence: true
+    presence: true,
+    uniqueness: { scope: :bucket_id }
 
   validates :image,
     presence: true
