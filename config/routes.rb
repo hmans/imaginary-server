@@ -5,7 +5,7 @@ Imaginary::Application.routes.draw do
     end
   end
 
-  get 'x/:bucket_id/:name(/:options)' => 'transforms#serve'
+  get 'x/:bucket_id/:name(/*options)' => 'transforms#serve'
 
   # root to: 'buckets#index'
 end

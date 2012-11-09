@@ -6,20 +6,22 @@ class TransformsController < ApplicationController
     # start with the source image
     @job = @image.image
 
+    # collect options
     options = {}
     if params[:options].present?
-      params[:options].split(',').each do |option|
-        key, value = option.split('_')
-        case key
-          when 'w' then options[:width] = value
-          when 'h' then options[:height] = value
-          when 'c' then options[:crop_mode] = value
-          when 'g' then options[:gravity] = value
-          else raise "Unrecognized option #{option}."
+      params[:options].split('/').each do |option|
+        if ['stretch', 'fit', 'fill'].include?(option)
+          options[:crop_mode] = option
+        elsif ['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw'].include?(option)
+          options[:gravity] = option
+        elsif option =~ /^(\d*)(x(\d*))?$/
+          options[:width] = $1
+          options[:height] = $3
         end
       end
     end
 
+    # process image
     if options.any?
       case (options.delete(:crop_mode) || :stretch).to_sym
         when :stretch
