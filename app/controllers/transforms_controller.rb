@@ -1,6 +1,6 @@
 class TransformsController < ApplicationController
   def serve
-    @bucket = Bucket.find(params[:bucket_id])
+    @bucket = Bucket.find_by_name(params[:bucket_id]) || Bucket.find(params[:bucket_id])
     @image = @bucket.images.find_by_name!(params[:name])
 
     # start with the source image
