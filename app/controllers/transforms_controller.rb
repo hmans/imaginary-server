@@ -1,5 +1,12 @@
 class TransformsController < ApplicationController
   def serve
+    # Munge rails' :format parameter. No, setting `format: false` in routes.rb
+    # won't work, as Rails placeholders will still ignore dots. Eep!
+    #
+    if params[:format].present?
+      params[:name] = "#{params[:name]}.#{params.delete(:format)}"
+    end
+
     @bucket = Bucket.find_by_name(params[:bucket_id]) || Bucket.find(params[:bucket_id])
     @image = @bucket.images.find_by_name!(params[:name])
 
