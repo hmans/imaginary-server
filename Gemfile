@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'sqlite3'
+
 # gem 'slim-rails'
 gem 'inherited_resources'
 # gem 'simple_form'
@@ -28,6 +28,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'ffaker'
@@ -38,7 +39,8 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2'
+  # gem 'mysql2'
+  gem 'pg'
   # gem 'therubyracer'
 end
 
