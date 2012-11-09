@@ -1,29 +1,49 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
+# gem 'slim-rails'
+gem 'inherited_resources'
+# gem 'simple_form'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'quiet_assets'
 
+# rendering
+# gem 'redcarpet'
 
-# Gems used only for assets and not required
-# in production environments by default.
+# authentication & authorization
+# gem 'omniauth'
+# gem 'omniauth-browserid'
+# gem 'cancan'
+
+# image uploads
+# gem 'rack-cache', :require => 'rack/cache'
+# gem 'dragonfly', '~>0.9.12'
+# gem 'dragonfly-cloudinary'
+
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+  # gem 'sass-rails',   '~> 3.2.3'
+  # gem 'coffee-rails', '~> 3.2.1'
+  # gem 'uglifier', '>= 1.0.3'
+  # gem 'compass-rails'
 end
 
-gem 'jquery-rails'
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+  gem 'capistrano'
+end
+
+group :production do
+  gem 'mysql2'
+  # gem 'therubyracer'
+end
+
+# gem 'jquery-rails'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
