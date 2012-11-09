@@ -17,6 +17,8 @@ class TransformsController < ApplicationController
         elsif option =~ /^(\d*)(x(\d*))?$/
           options[:width] = $1
           options[:height] = $3
+        else
+          raise "Unknown option #{option}."
         end
       end
     end
