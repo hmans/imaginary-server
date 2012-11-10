@@ -8,6 +8,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # frontend
 gem 'slim-rails'
 gem 'quiet_assets'
+gem 'simple_form'
 
 # image handling
 gem 'dragonfly', '~>0.9.12'

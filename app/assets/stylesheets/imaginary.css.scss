@@ -7,6 +7,18 @@ $color-background: white;
 $color-text: black;
 $color-link: orange;
 
+// mixins
+@mixin button {
+  background-color: #eee;
+  color: #333;
+  display: inline-block;
+  padding: 5px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border: none;
+  font: $font-default;
+}
+
 // switch box sizing model
 * { @include box-sizing(inherit); }
 html, body { @include box-sizing(border-box); }
@@ -39,11 +51,7 @@ a {
     margin: 20px 0;
 
     a {
-      background-color: #eee;
-      color: #333;
-      display: inline-block;
-      padding: 5px 20px;
-      text-decoration: none;
+      @include button;
     }
   }
 
@@ -61,6 +69,56 @@ a {
       background-color: #eee;
 
       img { display: block; width: 232px; height: 232px; }
+    }
+  }
+
+  form {
+    .input {
+      margin: 1em 0;
+
+      label {
+        display: inline-block;
+        text-align: right;
+        width: 280px;
+        margin-right: 40px;
+        color: #999;
+      }
+
+      .error {
+        color: red;
+      }
+
+      select {
+        background: transparent;
+        font: $font-default;
+        border: 1px solid #ccc;
+        height: 28px;
+      }
+
+      input, textarea {
+        font: $font-default;
+        border: none;
+
+        &.text, &.string, &.password {
+          padding: 5px 5px 2px 5px;
+          width: 700px;
+
+          border-bottom: 3px solid #eee;
+
+          &:hover, &:active, &:focus {
+            background-color: #f8f8f8;
+          }
+        }
+      }
+    }
+
+    .buttons {
+      margin-top: 2em;
+      margin-left: 320px;
+
+      input {
+        @include button;
+      }
     }
   }
 
