@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
   validates :name,
     presence: true,
     uniqueness: { scope: :bucket_id },
-    format: { with: /^[a-z0-9]*$/ }
+    format: { with: /^[\-_a-z0-9]*$/ }
 
   validates :image,
     presence: true
@@ -22,6 +22,6 @@ class Image < ActiveRecord::Base
   end
 
   def to_param
-    name
+    name_was
   end
 end
