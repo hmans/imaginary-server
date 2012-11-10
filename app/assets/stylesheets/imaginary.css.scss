@@ -12,12 +12,22 @@ $color-link: orange;
   background-color: #eee;
   color: #333;
   display: inline-block;
-  padding: 5px 20px;
+  padding: 3px 18px;
   text-decoration: none;
   margin-right: 10px;
   border: none;
   font: $font-default;
+
+  @include button-decoration;
 }
+
+@mixin button-decoration {
+  border: 2px solid #eee;
+  &:hover { border-color: #999 };
+  // @include box-shadow(rgba(#000, 0.2) 2px 2px 5px 1px)
+}
+
+.button { @include button }
 
 // switch box sizing model
 * { @include box-sizing(inherit); }
@@ -56,7 +66,7 @@ a {
   }
 
   .images {
-    width: 1024px;
+    width: 1034px;
     //overflow: auto;
 
     .image {
@@ -64,11 +74,13 @@ a {
       height: 248px;
       display: block;
       float: left;
-      margin: 0px 8px 8px 0;
+      margin: 0px 9px 9px 0;
       padding: 8px;
       background-color: #eee;
 
-      img { display: block; width: 232px; height: 232px; }
+      img { display: block; width: 228px; height: 228px; }
+
+      @include button-decoration;
     }
   }
 

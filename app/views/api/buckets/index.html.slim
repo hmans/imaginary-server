@@ -1,5 +1,5 @@
 h1 Buckets
 
-ul
+.buckets
   - @buckets.each do |bucket|
-    li= link_to bucket.name, [:api, bucket]
+    = link_to bucket.name, [:api, bucket], class: 'button'
