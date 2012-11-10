@@ -9,5 +9,5 @@ Imaginary::Application.routes.draw do
 
   get 'x/:bucket_id(/*options)/:name' => 'transforms#serve'
 
-  # root to: 'buckets#index'
+  root to: 'transforms#welcome'
 end

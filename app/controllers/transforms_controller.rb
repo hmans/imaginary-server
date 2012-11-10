@@ -49,4 +49,7 @@ class TransformsController < ApplicationController
     expires_in 30.days, public: true
     render text: @job.data, content_type: @job.mime_type
   end
+
+  def welcome
+  end
 end
