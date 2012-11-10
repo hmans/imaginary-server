@@ -46,7 +46,7 @@ class TransformsController < ApplicationController
     end
 
     # Render the result!
-    expires_in 30.days
+    expires_in 30.days, public: true
     render text: @job.data, content_type: @job.mime_type
   end
 end
