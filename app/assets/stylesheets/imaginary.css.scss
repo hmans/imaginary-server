@@ -75,13 +75,16 @@ a {
   form {
     .input {
       margin: 1em 0;
+      padding-left: 220px;
 
       label {
-        display: inline-block;
-        text-align: right;
-        width: 280px;
-        margin-right: 40px;
+        display: block;
+        position: absolute;
+        width: 200px;
+        margin-left: -220px;
+        margin-top: 8px;
         color: #999;
+        font-size: 85%;
       }
 
       .error {
@@ -102,8 +105,7 @@ a {
         &.text, &.string, &.password {
           padding: 5px 5px 2px 5px;
           width: 700px;
-
-          border-bottom: 3px solid #eee;
+          border-bottom: 2px solid #eee;
 
           &:hover, &:active, &:focus {
             background-color: #f8f8f8;
@@ -112,9 +114,16 @@ a {
       }
     }
 
+    .hint {
+      display: block;
+      font-size: 60%;
+      color: #999;
+      margin: 10px 0;
+    }
+
     .buttons {
       margin-top: 2em;
-      margin-left: 320px;
+      margin-left: 220px;
 
       input {
         @include button;
