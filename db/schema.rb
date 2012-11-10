@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20121109181003) do
 
   create_table "buckets", :force => true do |t|
     t.string   "name"
+    t.string   "secret"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

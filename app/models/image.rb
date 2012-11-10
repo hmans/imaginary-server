@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
   validates :name,
     presence: true,
     uniqueness: { scope: :bucket_id },
-    format: { with: /^[\-_a-z0-9]*$/ }
+    format: { with: /^[a-z0-9]*$/ }
 
   validates :image,
     presence: true

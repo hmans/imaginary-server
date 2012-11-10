@@ -7,12 +7,17 @@ class TransformsController < ApplicationController
       params[:name] = "#{params[:name]}.#{params.delete(:format)}"
     end
 
+    # Extract signature from params, if present
+    if params[:name] =~ /^(.+)-(.+)$/
+      params[:name] = $1
+    end
+
     # Load the data we need.
     @bucket = Bucket.find_by_name(params[:bucket_id]) || Bucket.find(params[:bucket_id])
     @image = @bucket.images.find_by_name!(params[:name])
 
-    # Start with the source image.
-    @job = @image.image
+    # Check signature
+    raise "Signature was rejected." if request.fullpath != transform_url(@image, params[:options])
 
     # Collect options
     options = {}
@@ -30,6 +35,9 @@ class TransformsController < ApplicationController
         end
       end
     end
+
+    # Start with the source image.
+    @job = @image.image
 
     # Process image, if requested.
     if options.any?

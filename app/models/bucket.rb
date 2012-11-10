@@ -1,5 +1,5 @@
 class Bucket < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :secret
 
   validates :name,
     presence: true,
