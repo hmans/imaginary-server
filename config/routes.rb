@@ -1,7 +1,7 @@
 Imaginary::Application.routes.draw do
   namespace :api do
-    resources :buckets, format: :json do
-      resources :images, format: :json
+    resources :buckets do
+      resources :images
     end
   end
 

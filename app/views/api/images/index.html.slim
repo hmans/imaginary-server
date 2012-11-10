@@ -1,0 +1,5 @@
+h1 Images
+
+- @images.each do |image|
+  = image_tag "/x/#{image.bucket.name}/300x300/#{image.name}"
+

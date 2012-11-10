@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-# gem 'slim-rails'
+gem 'slim-rails'
 gem 'inherited_resources'
 # gem 'simple_form'
 gem 'bcrypt-ruby', '~> 3.0.0'
