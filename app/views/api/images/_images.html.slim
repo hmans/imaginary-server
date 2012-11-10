@@ -1,4 +1,4 @@
 .images
   - images.each do |image|
     .image
-      = link_to (image_tag "/x/#{image.bucket.name}/228x228/#{image.name}"), "/x/#{image.bucket.name}/#{image.name}"
+      = link_to (image_tag "/x/#{image.bucket.name}/228x228/#{image.name}"), [:api, image.bucket, image]

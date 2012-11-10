@@ -1,0 +1,7 @@
+h1 Image
+
+.actions
+  = link_to "Original Version", "/x/#{@image.bucket.name}/#{@image.name}"
+  = link_to "Return to Bucket", [:api, @image.bucket]
+
+= image_tag "/x/#{@image.bucket.name}/1024x/fit/#{@image.name}"
