@@ -15,6 +15,8 @@ class Image < ActiveRecord::Base
   belongs_to :bucket
 
   before_validation(on: :create) do
-    self.name ||= image.name || "#{SecureRandom.hex(20)}.#{image.format || 'jpg'}"
+    if name.blank?
+      self.name = "#{SecureRandom.hex(20)}.#{image.format || 'jpg'}"
+    end
   end
 end
