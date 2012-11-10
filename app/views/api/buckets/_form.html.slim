@@ -1,4 +1,5 @@
 = simple_form_for [:api, @bucket] do |f|
+  p Please note that changing any of the following will invalidate <strong>all</strong> existing links to contained images (since URL signatures will change accordingly). Handle with care!
   = f.input :name
   = f.input :secret
   .buttons
