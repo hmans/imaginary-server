@@ -1,0 +1,55 @@
+@import "compass";
+@import "compass/reset";
+
+$font-default: 24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+$color-background: white;
+$color-text: black;
+$color-link: orange;
+
+// switch box sizing model
+* { @include box-sizing(inherit); }
+html, body { @include box-sizing(border-box); }
+
+body {
+  font: $font-default;
+  background-color: $color-background;
+  color: $color-text;
+}
+
+a {
+  color: $color-link;
+}
+
+#content {
+  width: 1024px;
+  margin: 50px auto;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin: 1em 0;
+  }
+
+  h1 {
+    font-size: 300%;
+    border-bottom: 5px solid #eee;
+  }
+
+  .images {
+    width: 1024px;
+    //overflow: auto;
+
+    .image {
+      width: 248px;
+      height: 248px;
+      display: block;
+      float: left;
+      margin: 0px 8px 8px 0;
+      padding: 8px;
+      background-color: #eee;
+
+      img { display: block; width: 232px; height: 232px; }
+    }
+  }
+
+  *:first-child { margin-top: 0 }
+}

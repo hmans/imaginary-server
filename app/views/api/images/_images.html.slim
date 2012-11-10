@@ -1,0 +1,4 @@
+.images
+  - images.each do |image|
+    .image
+      = image_tag "/x/#{image.bucket.name}/224x224/#{image.name}"
