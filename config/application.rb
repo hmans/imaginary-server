@@ -68,5 +68,8 @@ module Imaginary
     # Disable some generators
     config.generators.stylesheets = false
     config.generators.javascripts = false
+
+    # Tame Heroku's asset precompilation
+    config.assets.initialize_on_precompile = false
   end
 end
