@@ -7,4 +7,8 @@ class Bucket < ActiveRecord::Base
 
   has_many :images,
     dependent: :destroy
+
+  def to_param
+    name
+  end
 end

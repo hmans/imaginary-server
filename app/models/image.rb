@@ -6,7 +6,8 @@ class Image < ActiveRecord::Base
 
   validates :name,
     presence: true,
-    uniqueness: { scope: :bucket_id }
+    uniqueness: { scope: :bucket_id },
+    format: { with: /^[a-z0-9]*$/ }
 
   validates :image,
     presence: true
@@ -16,7 +17,11 @@ class Image < ActiveRecord::Base
 
   before_validation(on: :create) do
     if name.blank?
-      self.name = "#{SecureRandom.hex(20)}.#{image.format || 'jpg'}"
+      self.name = "#{SecureRandom.hex(16)}"
     end
+  end
+
+  def to_param
+    name
   end
 end
