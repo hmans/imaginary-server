@@ -33,7 +33,7 @@ class TransformsController < ApplicationController
 
     # Process image, if requested.
     if options.any?
-      case (options.delete(:crop_mode) || :stretch).to_sym
+      case (options.delete(:crop_mode) || :fill).to_sym
         when :stretch
           @job = @job.process(:resize, "#{options[:width]}x#{options[:height]}!")
         when :fit
