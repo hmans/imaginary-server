@@ -18,7 +18,7 @@ class TransformsController < ApplicationController
     options = {}
     if params[:options].present?
       params[:options].split('/').each do |option|
-        if ['stretch', 'fit', 'fill'].include?(option)
+        if ['stretch', 'fit', 'crop', 'thumb'].include?(option)
           options[:crop_mode] = option
         elsif ['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw'].include?(option)
           options[:gravity] = option
@@ -33,12 +33,14 @@ class TransformsController < ApplicationController
 
     # Process image, if requested.
     if options.any?
-      case (options.delete(:crop_mode) || :fill).to_sym
+      case (options.delete(:crop_mode) || :thumb).to_sym
         when :stretch
           @job = @job.process(:resize, "#{options[:width]}x#{options[:height]}!")
         when :fit
-          @job = @job.process(:resize, "#{options[:width]}x#{options[:height]}")
-        when :fill
+          @job = @job.process(:thumb, "#{options[:width]}x#{options[:height]}>")
+        when :crop
+          @job = @job.process(:crop, options)
+        when :thumb
           @job = @job.process(:resize_and_crop, options)
         else
           raise "Unrecognized crop mode."
