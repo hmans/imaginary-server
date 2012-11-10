@@ -27,12 +27,24 @@ a {
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    margin: 1em 0;
+    margin: 40px 0;
   }
 
   h1 {
     font-size: 300%;
     border-bottom: 5px solid #eee;
+  }
+
+  .actions {
+    margin: 20px 0;
+
+    a {
+      background-color: #eee;
+      color: #333;
+      display: inline-block;
+      padding: 5px 20px;
+      text-decoration: none;
+    }
   }
 
   .images {

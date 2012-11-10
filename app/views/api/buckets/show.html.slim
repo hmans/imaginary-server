@@ -1,5 +1,6 @@
 h1 Bucket: "#{@bucket.name}"
 
+.actions
+  = link_to "All Buckets", [:api, :buckets]
 
-h2 Images
 = render 'api/images/images', images: @bucket.images
