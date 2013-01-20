@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # core
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 gem 'inherited_resources'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
