@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/hmans/resourcery.git
-  revision: 12653e2e382688a80001c05296f9571ddb76228e
+  revision: a0c4ad6414f2a55e95b330b79a4412c3999512d9
   branch: master
   specs:
     resourcery (0.1.0)
