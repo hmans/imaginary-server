@@ -2,13 +2,14 @@ source 'https://rubygems.org'
 
 # core
 gem 'rails', '3.2.11'
-gem 'inherited_resources'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'resourcery', github: 'hmans/resourcery', branch: 'master'
 
 # frontend
 gem 'slim-rails'
 gem 'quiet_assets'
 gem 'simple_form'
+gem 'jquery-rails'
 
 # image handling
 gem 'dragonfly', '~>0.9.12'
@@ -40,8 +41,6 @@ group :production do
   # when using S3
   gem 'fog'
 end
-
-gem 'jquery-rails'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

@@ -1,0 +1,8 @@
+h1 Bucket: "#{@bucket.name}"
+
+.actions
+  = link_to "Edit", [:edit, @bucket]
+  = link_to "All Buckets", :buckets
+
+h2 Images
+= render 'images/images', images: @bucket.images

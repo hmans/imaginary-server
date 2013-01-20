@@ -2,6 +2,6 @@ h1 Image
 
 .actions
   = link_to "Source Image", transform_url(@image)
-  = link_to "Return to Bucket", [:api, @image.bucket]
+  = link_to "Return to Bucket", @image.bucket
 
 = image_tag transform_url(@image, '1024x/fit')

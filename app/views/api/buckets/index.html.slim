@@ -1,9 +1,0 @@
-h1 Buckets
-
-.actions
-  = link_to "New Bucket", [:new, :api, :bucket]
-
-h2 Available Buckets
-.buckets
-  - @buckets.each do |bucket|
-    = link_to bucket.name, [:api, bucket], class: 'button'
