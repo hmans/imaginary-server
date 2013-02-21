@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # core
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'resourcery', github: 'hmans/resourcery', branch: 'master'
 
