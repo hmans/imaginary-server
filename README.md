@@ -3,6 +3,12 @@
 Image hosting and transformation server with a RESTful management API.
 _Work in progress_.
 
+## Setting up your own Imaginary server
+
+Imaginary is a Rails application meant to be deployed to your own server(s) or a Heroku instance. It is recommended that you **create a fork** and use that for deploying and making any necessary changes.
+
+Deploying Imaginary will not be covered here, as it is outside of the scope of this documentation. You can deploy Imaginary like any other Rails application.
+
 ## Configuration
 
 Imaginary expects a couple of environment variables set in order to function.
