@@ -26,7 +26,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'ffaker'
-  gem 'debugger'
 end
 
 group :development do
@@ -39,7 +38,7 @@ group :production do
   gem 'therubyracer'
 
   # when using S3
-  gem 'fog'
+  gem 'fog', '>= 1.0.0'
 end
 
 # To use Jbuilder templates for JSON
