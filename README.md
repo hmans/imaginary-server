@@ -7,5 +7,9 @@ _Work in progress_.
 
 Imaginary expects a couple of environment variables set in order to function.
 
+| Environment Variable     | Purpose |
+| ------------------------ | ------- |
 | `IMAGINARY_API_USERNAME` | The API username |
 | `IMAGINARY_API_PASSWORD` | The API password |
+
+Yay!
