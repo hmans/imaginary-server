@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :transform_url
 
+  if Rails.env.production?
+    rescue_from RuntimeError do |e|
+      render text: "Error: #{e}", status: 500
+    end
+  end
+
   def transform_url(image, commands = nil)
     url = ['x', image.bucket.name, commands, image.name].compact.join('/')
 
