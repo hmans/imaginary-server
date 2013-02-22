@@ -17,6 +17,7 @@ Imaginary expects a couple of environment variables set in order to function.
 | ------------------------ | ------- |
 | `IMAGINARY_API_USERNAME` | The API username |
 | `IMAGINARY_API_PASSWORD` | The API password |
+| `IMAGINARY_SECRET_TOKEN` | The Rails secure cookie secret token. |
 | `S3_ACCESS_KEY_ID` | Your S3 Access Key |
 | `S3_SECRET_ACCESS_KEY` | Your S3 Secret Access Key |
 | `S3_BUCKET` | S3 bucket to use |
