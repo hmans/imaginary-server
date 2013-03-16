@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121109181003) do
+ActiveRecord::Schema.define(:version => 20130316163532) do
 
   create_table "buckets", :force => true do |t|
     t.string   "name"
@@ -24,8 +24,12 @@ ActiveRecord::Schema.define(:version => 20121109181003) do
     t.integer  "bucket_id"
     t.string   "name"
     t.string   "image_uid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "image_width"
+    t.integer  "image_height"
+    t.integer  "image_size"
+    t.string   "image_format"
   end
 
   add_index "images", ["bucket_id"], :name => "index_images_on_bucket_id"
